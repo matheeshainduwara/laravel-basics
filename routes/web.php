@@ -15,6 +15,8 @@ Route::get('/contact', function(){
 });
 
 /*
+Routing
+
 Create a small personal website using routes only.
 Add these URLs:
 
@@ -55,3 +57,27 @@ Route::get('/skills', function(){
 Route::get('/contact', function(){
     return "matheesha000@gmail.com";
 });
+
+//Route Parameters
+
+Route::get('/course/{course}', function($course){
+    return "Course: ".$course;
+});
+
+/*
+Create a route:
+
+/profile/{name}/{degree}/{university}
+
+Display all three values with HTML line breaks.
+
+Example:
+Name: Matheesha
+Degree: CIS
+University: SUSL
+*/
+
+Route::get('/profile/{name}/{degree}/{university}', function($name,$degree,$university){
+    return "Name: ".$name."<br>Degree: ".$degree."<br>University: ".$university;
+});
+

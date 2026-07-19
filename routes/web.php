@@ -81,3 +81,29 @@ Route::get('/profile/{name}/{degree}/{university}', function($name,$degree,$univ
     return "Name: ".$name."<br>Degree: ".$degree."<br>University: ".$university;
 });
 
+//Optional Route Parameters
+
+Route::get('/greeting/{name?}',function($name="Guest"){
+    return "Welcome ".$name;
+});
+
+/*
+Create:
+/product/{name?}/{price?}
+
+Default values:
+Unknown Product
+0
+
+Display both values.
+*/
+
+Route::get('/product/{name?}/{price?}', function($name="Unknown Product",$price=0){
+    return "Product Name: ".$name."<br>Price: ".$price;
+});
+
+//Named Routes
+
+Route::get('/contact', function () {
+    return "Contact Page";
+})->name('contact');
